@@ -16,7 +16,7 @@ From the project root, execute: `./build.sh`. This will:
 1. Gather role dependencies via `ansible-galaxy`
 2. Run a `docker build` creating an image tagged as 'codesplicer/ansible-nginx'
 3. Start a container from the image built in step 2, exposing port 8080
-4. Open `http://localhost:8080` to see the hello-world page
+4. Open [localhost:8080](http://localhost:8080)` to see the hello-world page
 
 
 Author
