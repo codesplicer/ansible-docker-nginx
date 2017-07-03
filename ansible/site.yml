@@ -1,0 +1,24 @@
+---
+- hosts: 127.0.0.1
+  become: yes
+
+  vars:
+    nginx_remove_default_vhost: true
+    nginx_vhosts:
+      - listen: "80 default_server"
+        server_name: "localhost"
+        root: "/var/www/mysite"
+        index: "index.html"
+
+  pre_tasks:
+    - name: Create vhost root directory
+      file:
+        path: /var/www/mysite
+        state: directory
+        mode: 0644
+        owner: root
+        group: root
+
+  roles:
+    - { role: mysite }
+    - { role: geerlingguy.nginx }

@@ -1,0 +1,23 @@
+---
+- name: Create webroot
+  file:
+    path: /var/www/mysite
+    state: directory
+    mode: 0755
+    owner: www-data
+    group: www-data
+
+- name: Ensure nginx can read /var/www
+  file:
+    path: /var/www
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Copy hello-world into webroot
+  copy:
+    src: index.html
+    dest: /var/www/mysite
+    owner: www-data
+    group: www-data

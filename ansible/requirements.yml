@@ -1,0 +1,5 @@
+---
+- src: https://github.com/geerlingguy/ansible-role-nginx.git
+  version: master
+  scm: git
+  name: geerlingguy.nginx
